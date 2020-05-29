@@ -19,11 +19,13 @@
       app>
 
       <v-list>
-        <v-list-item>
+        <v-list-item v-for="link in links" :key="`drawer-`+link.text" :to="link.route">
           <v-list-item-icon>
-            <v-icon>mdi-view-dashboard</v-icon>
+            <v-icon v-text="link.icon"></v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Dashboard</v-list-item-title>
+          <v-list-item-content>
+            <v-list-item-title v-text="link.text"></v-list-item-title>
+          </v-list-item-content>
         </v-list-item>
       </v-list>
 
@@ -35,7 +37,12 @@
         name: "Navbar",
       data() {
           return {
-            drawer: false
+            drawer: false,
+            links: [
+              {icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/'},
+              {icon: 'mdi-folder', text: 'My projects', route: 'projects'},
+              {icon: 'mdi-account-multiple', text: 'Team', route: 'about'},
+            ]
           }
       }
     }
