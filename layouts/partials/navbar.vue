@@ -16,9 +16,17 @@
     <v-navigation-drawer
       temporary
       v-model="drawer"
-      app
-      class="indigo">
-      <p>test</p>
+      app>
+
+      <v-list>
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-view-dashboard</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Dashboard</v-list-item-title>
+        </v-list-item>
+      </v-list>
+
     </v-navigation-drawer>
   </nav>
 </template>
