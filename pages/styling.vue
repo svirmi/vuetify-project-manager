@@ -1,4 +1,6 @@
 <template>
+  <v-layout>
+    <v-flex class="text-center">
 <div class="styling">
 
   <h1>Some CSS classes examples</h1>
@@ -19,6 +21,8 @@
   </v-btn>
 
 </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>

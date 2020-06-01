@@ -2,16 +2,18 @@
   <v-layout>
     <v-flex class="text-center">
       <div class="home">
-        <h1>Dashboard</h1>
+        <h1>Team page</h1>
       </div>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-export default {
-  components: {
-
-  }
-}
+    export default {
+        name: "team"
+    }
 </script>
+
+<style scoped>
+
+</style>
