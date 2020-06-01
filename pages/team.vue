@@ -1,8 +1,8 @@
 <template>
   <v-layout>
-    <v-flex class="text-center">
+    <v-flex class="">
       <div class="home">
-        <h1>Team page</h1>
+        <h1 class="subheading grey--text">Team page</h1>
       </div>
     </v-flex>
   </v-layout>
