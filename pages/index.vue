@@ -4,8 +4,28 @@
       <div class="home">
         <h1 class="subheading grey--text">Dashboard</h1>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque aut autem beatae commodi eveniet mollitia, unde. Aspernatur consequatur exercitationem explicabo incidunt, nihil numquam odio officiis omnis qui quo! At.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eligendi in ipsam iusto optio unde ut veniam, voluptate! Aliquid dolorem ea ipsum magnam magni nostrum officia praesentium quibusdam sint ut?</p>
+        <v-container class="my-5">
+          <v-card class="pa-3">
+            <v-layout wrap>
+              <v-flex xs12 md6>
+                <div class="caption grey--tex">Project title</div>
+                <div>Create something</div>
+              </v-flex>
+              <v-flex xs6 sm4 md2>
+                <div class="caption grey--tex">Person</div>
+                <div>I am the person</div>
+              </v-flex>
+              <v-flex xs6 sm4 md2>
+                <div class="caption grey--tex">Due by</div>
+                <div>12-06-2020</div>
+              </v-flex>
+              <v-flex xs6 sm4 md2>
+                <div class="caption grey--tex">Status</div>
+                <div>in progress</div>
+              </v-flex>
+            </v-layout>
+          </v-card>
+        </v-container>
 
       </div>
     </v-flex>
