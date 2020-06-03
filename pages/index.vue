@@ -5,6 +5,22 @@
         <h1 class="subheading grey--text">Dashboard</h1>
 
         <v-container class="my-5">
+
+          <v-row>
+            <v-col cols="6" sm="6" class="pl-5">
+              <v-btn small>
+                <v-icon dark left small>mdi-folder</v-icon>
+                <span class="caption text-lowercase">By project name</span>
+              </v-btn>
+            </v-col>
+            <v-col cols="6" sm="6">
+              <v-btn small>
+                <v-icon dark left small>mdi-account-multiple</v-icon>
+                <span class="caption text-lowercase">By person</span>
+              </v-btn>
+            </v-col>
+          </v-row>
+
           <v-card flat v-for="project in projects" :key="project.title">
             <v-layout wrap :class="`pa-3 project ${project.status.replace(' ','_')}`">
               <v-flex xs12 md6>
