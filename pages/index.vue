@@ -8,13 +8,13 @@
 
           <v-row>
             <v-col cols="6" sm="6" class="pl-5">
-              <v-btn small>
+              <v-btn small @click="sortBy('title')">
                 <v-icon dark left small>mdi-folder</v-icon>
                 <span class="caption text-lowercase">By project name</span>
               </v-btn>
             </v-col>
             <v-col cols="6" sm="6">
-              <v-btn small>
+              <v-btn small @click="sortBy('person')">
                 <v-icon dark left small>mdi-account-multiple</v-icon>
                 <span class="caption text-lowercase">By person</span>
               </v-btn>
@@ -55,11 +55,16 @@ export default {
   data() {
     return {
       projects: [
-        {title: 'Title 1', person: 'Gummy The Bear', due: '10-10-2020', status: 'in progress', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
+        {title: 'Make this happened', person: 'Gummy The Bear', due: '10-10-2020', status: 'in progress', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
         {title: 'Title 2', person: 'Sher Lock', due: '02-02-2020', status: 'overdue', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
-        {title: 'Title 3', person: 'The Beast', due: '04-08-2020', status: 'complete', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
-        {title: 'Title 4', person: 'Terminator', due: '19-09-2020', status: 'in progress', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
+        {title: 'Random string', person: 'The Beast', due: '04-08-2020', status: 'complete', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
+        {title: 'Yet another title', person: 'Terminator', due: '19-09-2020', status: 'in progress', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur assumenda beatae consequatur consequuntur delectus distinctio eos, illum in itaque maxime minima nesciunt nostrum nulla repellendus rerum sint, sit voluptate.'},
       ]
+    }
+  },
+  methods: {
+    sortBy(prop) {
+      this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
     }
   }
 }
