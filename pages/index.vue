@@ -20,8 +20,9 @@
                 <div>{{ project.due }}</div>
               </v-flex>
               <v-flex xs6 sm4 md2>
-                <div class="caption grey--tex">Status</div>
-                <div>{{ project.status }}</div>
+                <div>
+                  <v-chip small :class="`${project.status.replace(' ','_')} white--text caption`">{{ project.status }}</v-chip>
+                </div>
               </v-flex>
             </v-layout>
             <v-divider></v-divider>
@@ -49,15 +50,32 @@ export default {
 </script>
 
 <style lang="scss">
+
+  $in_progress: orange;
+  $complete: #3cd1c2;
+  $overdue: tomato;
+
   .project {
     &.in_progress {
-      border-left: 4px solid orange;
+      border-left: 4px solid $in_progress;
     }
     &.complete {
-      border-left: 4px solid #3cd1c2;
+      border-left: 4px solid $complete;
     }
     &.overdue {
-      border-left: 4px solid tomato;
+      border-left: 4px solid $overdue;
+    }
+  }
+
+  .v-chip {
+    &.in_progress {
+      background: $in_progress!important;
+    }
+    &.complete {
+      background: $complete!important;
+    }
+    &.overdue {
+      background: $overdue!important;
     }
   }
 </style>
