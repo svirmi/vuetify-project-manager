@@ -9,7 +9,12 @@
             <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
               <v-card class="text-center ma-3">
                 <v-responsive class="pt-4">
-                  image goes here
+                  <v-avatar size="100">
+                    <img
+                      :src="person.avatar"
+                      :alt="`${person.name} ${person.role} avatar`"
+                    >
+                  </v-avatar>
                 </v-responsive>
                 <v-card-text>
                   <div class="display-1 text--primary">{{ person.name }}</div>
@@ -37,11 +42,11 @@
       data() {
           return {
             team: [
-              { name: 'Gummy The Bear', role: 'Web developer' },
-              { name: 'Sher Lock', role: 'Software engineer'},
-              { name: 'The Beast', role: 'Front-end developer'},
-              { name: 'Terminator', role: 'Back-end developer'},
-              { name: 'Denis', role: 'SEO guru'}
+              { name: 'Gummy The Bear', role: 'Web developer',avatar: 'https://cdn.vuetifyjs.com/images/john.jpg' },
+              { name: 'Sher Lock', role: 'Software engineer', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'},
+              { name: 'The Beast', role: 'Front-end developer', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'},
+              { name: 'Terminator', role: 'Back-end developer', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'},
+              { name: 'Denis', role: 'SEO guru', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'}
             ]
           }
       }
