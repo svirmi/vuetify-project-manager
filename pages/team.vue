@@ -9,7 +9,7 @@
             <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
               <v-card class="text-center ma-3">
                 <v-responsive class="pt-4">
-                  <v-avatar size="100">
+                  <v-avatar size="110">
                     <img
                       :src="person.avatar"
                       :alt="`${person.name} ${person.role} avatar`"
