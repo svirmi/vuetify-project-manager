@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex class="">
       <div class="home">
-        <h1 class="subheading grey--text">Dashboard</h1>
+        <h1 class="grey--text">Dashboard</h1>
 
         <v-container class="my-5">
 
