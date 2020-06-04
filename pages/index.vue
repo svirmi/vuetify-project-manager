@@ -8,16 +8,26 @@
 
           <v-row>
             <v-col cols="6" sm="6" class="pl-5">
-              <v-btn small @click="sortBy('title')">
-                <v-icon dark left small>mdi-folder</v-icon>
-                <span class="caption text-lowercase">By project name</span>
-              </v-btn>
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-btn small @click="sortBy('title')" v-on="on">
+                    <v-icon dark left small>mdi-folder</v-icon>
+                    <span class="caption text-lowercase">By project title</span>
+                  </v-btn>
+                </template>
+                <span>Sort by project title</span>
+              </v-tooltip>
             </v-col>
             <v-col cols="6" sm="6">
-              <v-btn small @click="sortBy('person')">
-                <v-icon dark left small>mdi-account-multiple</v-icon>
-                <span class="caption text-lowercase">By person</span>
-              </v-btn>
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-btn small @click="sortBy('person')" v-on="on">
+                    <v-icon dark left small>mdi-folder</v-icon>
+                    <span class="caption text-lowercase">By person</span>
+                  </v-btn>
+                </template>
+                <span>Sort by person</span>
+              </v-tooltip>
             </v-col>
           </v-row>
 
