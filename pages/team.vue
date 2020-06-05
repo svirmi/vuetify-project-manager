@@ -12,13 +12,13 @@
                   <v-avatar size="110">
                     <img
                       :src="person.gravatar"
-                      :alt="`${person.name} ${person.role} avatar`"
+                      :alt="`${person.firstName} ${person.company} avatar`"
                     >
                   </v-avatar>
                 </v-responsive>
                 <v-card-text>
-                  <div class="display-1 text--primary">{{ person.name }}</div>
-                  <div class="">{{ person.role }}</div>
+                  <div class="display-1 text--primary">{{ person.firstName }}</div>
+                  <div class="">{{ person.company }}</div>
                 </v-card-text>
                 <v-card-actions>
                   <v-btn text>
@@ -40,7 +40,7 @@
   import Fakerator from "fakerator";
 
     export default {
-        name: "team",
+      name: "team",
       mounted() {
         this.getData();
 
@@ -58,7 +58,7 @@
 
             for (let i = 0; i < teamSize; i++) {
               let user = fakerator.entity.user();
-              user.role = fakerator.company.name();
+              user.company = fakerator.company.name();
               team.push(user);
             }
 
