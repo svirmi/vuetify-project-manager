@@ -4,6 +4,8 @@
       <div class="team">
         <h1 class="grey--text">Team Page</h1>
 
+
+
         <v-container class="my-5">
           <v-layout wrap :class="`pa-3 project`">
             <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
@@ -38,6 +40,7 @@
 
 <script>
   import Fakerator from "fakerator";
+  // import Avataaars from "vue-avataars";
 
     export default {
       name: "team",
