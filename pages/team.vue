@@ -11,7 +11,7 @@
                 <v-responsive class="pt-4">
                   <v-avatar size="110">
                     <img
-                      :src="person.avatar"
+                      :src="person.gravatar"
                       :alt="`${person.name} ${person.role} avatar`"
                     >
                   </v-avatar>
@@ -37,17 +37,34 @@
 </template>
 
 <script>
+  import Fakerator from "fakerator";
+
     export default {
         name: "team",
+      mounted() {
+        this.getData();
+
+      },
       data() {
           return {
-            team: [
-              { name: 'Gummy The Bear', role: 'Web developer',avatar: 'https://cdn.vuetifyjs.com/images/john.jpg' },
-              { name: 'Sher Lock', role: 'Software engineer', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'},
-              { name: 'The Beast', role: 'Front-end developer', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'},
-              { name: 'Terminator', role: 'Back-end developer', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'},
-              { name: 'Denis', role: 'SEO guru', avatar: 'https://cdn.vuetifyjs.com/images/john.jpg'}
-            ]
+            team: []
+          }
+      },
+      methods: {
+          getData() {
+            const fakerator = Fakerator("nb-NO");
+            const teamSize = 8;
+            let team = [];
+
+            for (let i = 0; i < teamSize; i++) {
+              let user = fakerator.entity.user();
+              user.role = fakerator.company.name();
+              team.push(user);
+            }
+
+            console.log(team);
+
+            this.team = team;
           }
       }
     }
