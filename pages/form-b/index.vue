@@ -50,6 +50,7 @@
             <v-btn
               color="primary" type="submit"
               @click.native.prevent="onSubmit"
+              :disabled="!formIsValid"
             >Go!</v-btn>
           </v-card-actions>
         </v-card>
@@ -64,8 +65,16 @@
     name: "form-b",
     methods: {
       onSubmit() {
+        const baseUrl = process.env.baseUrl;
+
         if (!this.formIsValid) return;
-        console.log('Send my form!');
+        axios
+          .post(`${baseUrl}/api`, { params: this.form })
+          .then(response => {
+            console.log('Form has been posted', response);
+          }).catch(err => {
+            console.log('An error occurred', err);
+        });
       }
     },
     computed: {

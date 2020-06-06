@@ -29,7 +29,8 @@ async function start () {
   apiRouter.post('/', async ctx => {
     ctx.body = {
       response: {
-        key: 'value'
+        myKey: 'myValue',
+        currentDateTime: new Date()
       }}
   })
 
@@ -53,7 +54,7 @@ async function start () {
   app.listen(port, host)
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
-    badge: true
+    badge: true,
   })
 }
 
