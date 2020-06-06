@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const Router = require('koa-router')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
@@ -16,6 +17,24 @@ async function start () {
     host = process.env.HOST || '127.0.0.1',
     port = process.env.PORT || 3000
   } = nuxt.options.server
+
+  const apiRouter = new Router({
+    prefix: '/api'
+  })
+
+  apiRouter.get('/', async ctx => {
+    ctx.body = {name: 'value'}
+  })
+
+  apiRouter.post('/', async ctx => {
+    ctx.body = {
+      response: {
+        key: 'value'
+      }}
+  })
+
+  app.use(apiRouter.routes())
+  app.use(apiRouter.allowedMethods())
 
   await nuxt.ready()
   // Build in development

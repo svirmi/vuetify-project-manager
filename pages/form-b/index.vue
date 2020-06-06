@@ -59,7 +59,7 @@
 </template>
 
 <script>
-
+  import axios from 'axios';
   export default {
     name: "form-b",
     methods: {
