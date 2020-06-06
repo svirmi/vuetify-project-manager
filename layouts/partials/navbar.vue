@@ -40,9 +40,10 @@
             drawer: false,
             links: [
               {icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/'},
-              {icon: 'mdi-folder', text: 'My projects', route: 'projects'},
-              {icon: 'mdi-account-multiple', text: 'Team', route: 'team'},
-              {icon: 'mdi-format-line-style', text: 'Styling', route: 'styling'},
+              {icon: 'mdi-folder', text: 'My projects', route: '/projects'},
+              {icon: 'mdi-account-multiple', text: 'Team', route: '/team'},
+              {icon: 'mdi-format-line-style', text: 'Styling', route: '/styling'},
+              {icon: 'mdi-apps', text: 'Forms', route: '/form'},
             ]
           }
       }
