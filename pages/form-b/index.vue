@@ -47,7 +47,10 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary">Go!</v-btn>
+            <v-btn
+              color="primary" type="submit"
+              @click.native.prevent="onSubmit"
+            >Go!</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -59,6 +62,21 @@
 
   export default {
     name: "form-b",
+    methods: {
+      onSubmit() {
+        if (!this.formIsValid) return;
+        console.log('Send my form!');
+      }
+    },
+    computed: {
+      formIsValid() {
+        return (
+          this.form.firstName.length > 0 &&
+          this.form.lastName.length > 0 &&
+          this.form.email.length > 0
+        );
+      }
+    },
     data: () => ({
         form: {
           firstName: '',
