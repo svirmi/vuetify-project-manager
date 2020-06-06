@@ -14,7 +14,7 @@
       props: {
           group: {
             type: String,
-            required: true
+            required: false
           },
           behaviour: {
             type: String,

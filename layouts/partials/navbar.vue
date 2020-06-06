@@ -43,7 +43,8 @@
               {icon: 'mdi-folder', text: 'My projects', route: '/projects'},
               {icon: 'mdi-account-multiple', text: 'Team', route: '/team'},
               {icon: 'mdi-format-line-style', text: 'Styling', route: '/styling'},
-              {icon: 'mdi-apps', text: 'Forms', route: '/form'},
+              {icon: 'mdi-apps', text: 'Form A', route: '/form-a'},
+              {icon: 'mdi-apps', text: 'Form B', route: '/form-b'},
             ]
           }
       }

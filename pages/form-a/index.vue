@@ -46,13 +46,6 @@
                   v-model="props.fields.first_name"
                 ></v-text-field>
               </Wrapper>
-              <v-text-field
-                id="last_name"
-                label="Last Name"
-                name="last_name"
-                prepend-icon="mdi-lock"
-                type="text"
-              ></v-text-field>
             </v-form>
           </v-card-text>
           <v-card-actions>
@@ -69,7 +62,7 @@
   import Wrapper from "../../components/forms/Wrapper";
 
   export default {
-    name: "forms",
+    name: "form-a",
     data: () => ({
 
     }),
