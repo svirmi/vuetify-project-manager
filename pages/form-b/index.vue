@@ -47,10 +47,10 @@
               ></v-text-field>
 
               <v-autocomplete
-                v-model="friends"
+                v-model="form.people"
                 :disabled="isUpdating"
                 :items="people"
-                label="Select"
+                label="Select something"
                 item-text="name"
                 item-value="name"
               >
@@ -110,7 +110,8 @@
         return (
           this.form.firstName.length > 0 &&
           this.form.lastName.length > 0 &&
-          this.form.email.length > 0
+          this.form.email.length > 0 &&
+            this.form.people.length > 0
         );
       }
     },
@@ -120,11 +121,11 @@
         form: {
           firstName: '',
           lastName: '',
-          email: ''
+          email: '',
+          people: ''
         },
         autoUpdate: true,
         isUpdating: false,
-        friends: {},
         people: [
           { header: 'Group 1' },
           { name: 'Sandra Adams', group: 'Group 1' },
