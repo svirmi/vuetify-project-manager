@@ -45,6 +45,7 @@
               {icon: 'mdi-format-line-style', text: 'Styling', route: '/styling'},
               {icon: 'mdi-apps', text: 'Form A', route: '/form-a'},
               {icon: 'mdi-apps', text: 'Form B', route: '/form-b'},
+              {icon: 'mdi-format-list-bulleted-square', text: 'SSD Forms', route: '/ssd-forms'},
             ]
           }
       }
